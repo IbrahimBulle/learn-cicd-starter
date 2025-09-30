@@ -1,4 +1,4 @@
-name: ci-first-test
+name: ci
 
 on:
   pull_request:
