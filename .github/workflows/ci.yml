@@ -1,4 +1,4 @@
-name: ci
+name: ci-first-test
 
 on:
   pull_request:
@@ -17,6 +17,6 @@ jobs:
         uses: actions/setup-go@v5
         with:
           go-version: "1.25.1"
-
-      - name: Force Failure
-        run: (exit 1)
+     
+    -name: Show go version
+      run: go version
