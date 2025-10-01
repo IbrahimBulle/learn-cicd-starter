@@ -21,7 +21,7 @@ func TestGetApi_NoHeader(t *testing.T){
 
 func TestGetApi_malformedHeader(t *testing.T){
 	headers:=http.Header{}
-	headers.Set("Authorization","Beare token123")
+	headers.Set("Authorization","Bearer token123")
 	_,err:=GetAPIKey(headers)
 	if err==nil || err.Error()!="malformed authorization header"{
 		t.Errorf("expected malformed authorization header, got %v",err)
