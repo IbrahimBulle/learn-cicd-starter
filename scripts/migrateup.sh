@@ -5,4 +5,6 @@ if [ -f .env ]; then
 fi
 
 cd sql/schema
-goose turso $DATABASE_URL up
+export GOOSE_DRIVER=turso
+export GOOSE_DBSTRING=$DATABASE_URL
+goose up
