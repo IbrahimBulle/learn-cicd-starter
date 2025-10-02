@@ -1,3 +1,4 @@
+---
 name: ci
 
 on:
@@ -20,3 +21,19 @@ jobs:
 
       - name: version name
         run: go test -cover ./...
+
+  style:
+    name: Formatting
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v4
+
+      - name: set up go
+        uses: actions/setup-go@v5
+        with:
+          go-version: "1.25.1"
+
+      - name: check fortamatting
+        run: test -z "$(go fmt ./...)"
